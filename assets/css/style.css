@@ -1,0 +1,251 @@
+/* ==========================================================================
+   1. DESIGN TOKENS & RESET (Shared Across All Devices)
+   ========================================================================== */
+
+:root {
+  /* Mondo Autumn Palette */
+  --color-rust: #b85a24;
+  --color-terracotta: #d96b43;
+  --color-ochre: #e09f3e;
+  --color-forest: #335c67;
+  --color-sage: #546a5b;
+  --color-charcoal: #2b2d42;
+  --color-ivory: #fff9f2;
+
+  --font-heading: "Impact", "Arial Black", sans-serif;
+  --font-body:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Reusable UI Components */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-terracotta);
+  color: var(--color-ivory);
+  padding: 0.85rem 1.75rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-rust);
+}
+
+.btn-secondary {
+  display: inline-block;
+  border: 2px solid var(--color-ochre);
+  color: var(--color-ochre);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-ochre);
+  color: var(--color-charcoal);
+}
+
+/* ==========================================================================
+   2. MOBILE VIEW (Default Base Layout)
+   ========================================================================== */
+
+/* Header & Nav (Stacked/Compact) */
+.site-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(43, 45, 66, 0.98);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-logo {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-ochre);
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  color: var(--color-ivory);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Hero Section (Stacked Vertically) */
+.hero-section {
+  display: flex;
+  flex-direction: column-reverse; /* Shows headline and CTA above or below as preferred */
+  padding: 2.5rem 1.25rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  width: 100%;
+  text-align: center;
+}
+
+.hero-tag {
+  color: var(--color-ochre);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 1rem;
+  font-family: var(--font-heading);
+  color: var(--color-ivory);
+}
+
+.hero-desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #d1d5db;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+/* Audio Section */
+.audio-section {
+  background-color: #222436;
+  padding: 3rem 1.25rem;
+}
+
+.audio-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-rust);
+  margin-bottom: 1rem;
+}
+
+.audio-player {
+  width: 100%;
+  border-radius: 4px;
+  accent-color: var(--color-terracotta);
+}
+
+/* ==========================================================================
+   3. DESKTOP VIEW (Screen Widths >= 768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  /* Header: Horizontal Row */
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+  }
+
+  .nav-links {
+    gap: 2rem;
+  }
+
+  /* Hero: Side-by-Side 2-Column Split */
+  .hero-section {
+    flex-direction: row;
+    min-height: 80vh;
+    align-items: center;
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .hero-media {
+    flex: 1;
+  }
+
+  .hero-image {
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Audio Section */
+  .audio-section {
+    padding: 4rem 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}

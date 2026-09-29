@@ -1,0 +1,29 @@
+# Mondo Website Project Rules
+
+## Tech Stack Constraints
+
+- Pure vanilla web: semantic HTML5, clean modern CSS3, and vanilla modern JavaScript (ES6+).
+- Strictly NO Node.js, npm, package.json, bundlers, or third-party JS frameworks.
+- Directory Structure:
+  - Root: index.html, README.md
+  - assets/css/style.css
+  - assets/js/script.js
+  - assets/images/
+  - assets/audio/
+
+## Design and Aesthetic
+
+- Client: Hip-hop / Rap artist (Mondo).
+- Theme: Bold, modern, autumn-inspired color palette:
+  - Deep Rust / Orange-Red accents: #B85A24, #D96B43
+  - Warm Gold: #E09F3E
+  - Deep Teal / Slate contrast: #335C67, #546A5B
+  - Off-White / Cream background: #FFF9F2
+  - Dark Charcoal / Ink text and dark cards: #2B2D42
+- Layout: Mobile-first, responsive, accessible, high visual impact.
+
+## Deliverable Quality
+
+- Ensure all interactive elements (navigation toggles, audio players, modals) work with vanilla JS event listeners.
+- Add explicit image dimension placeholders to eliminate layout shift.
+- Test compatibility with Python's local server (`python -m http.server 8000`).
