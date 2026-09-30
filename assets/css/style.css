@@ -185,6 +185,229 @@ body {
   accent-color: var(--color-terracotta);
 }
 
+.track-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-ochre);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Videos Section
+   ========================================================================== */
+.videos-section {
+  padding: 4rem 1.25rem;
+  background-color: #242638;
+}
+
+.videos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-tag {
+  color: var(--color-ochre);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+}
+
+.section-subtitle {
+  color: #d1d5db;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
+/* 16:9 Aspect Ratio Container */
+.featured-video-wrapper {
+  background-color: var(--color-charcoal);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 249, 242, 0.08);
+}
+
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.featured-video-meta {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.featured-video-meta h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-ivory);
+  letter-spacing: 0.03em;
+}
+
+/* Thumbnail Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.video-card {
+  background-color: var(--color-charcoal);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 249, 242, 0.05);
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.card-thumb:hover img {
+  opacity: 0.85;
+}
+
+.play-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(184, 90, 36, 0.9);
+  color: var(--color-ivory);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-info h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-ivory);
+  margin-bottom: 0.25rem;
+}
+
+.video-category {
+  font-size: 0.8rem;
+  color: var(--color-ochre);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Channel Subscribe Callout */
+.channel-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(184, 90, 36, 0.25) 0%,
+    rgba(43, 45, 66, 0.8) 100%
+  );
+  border: 1px solid var(--color-terracotta);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.channel-banner h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-ivory);
+}
+
+.channel-banner p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.video-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background-color: var(--color-charcoal);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 249, 242, 0.05);
+}
+
+.video-card:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
+/* Tablet & Desktop Adjustments */
+@media (min-width: 768px) {
+  .featured-video-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .channel-banner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
 /* ==========================================================================
    3. DESKTOP VIEW (Screen Widths >= 768px)
    ========================================================================== */

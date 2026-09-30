@@ -9,6 +9,7 @@
       content="Official website for Mondo. Stream latest tracks, watch videos, and view the press kit."
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/script.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -16,7 +17,7 @@
       <div class="site-logo">MONDO</div>
       <nav class="nav-links">
         <a href="#music">Music</a>
-        <a href="#videos">Videos</a>
+        <a href="/videos.html">Videos</a>
         <a href="#bio">Bio</a>
         <a href="#booking">Booking</a>
       </nav>
@@ -28,11 +29,12 @@
         <span class="hero-tag">Official Release</span>
         <h1 class="hero-title">NEW HEAT OUT NOW</h1>
         <p class="hero-desc">
-          Stream the newest project directly, watch official music videos, and view upcoming dates.
+          Stream the newest project directly, watch official music videos, and
+          view upcoming dates.
         </p>
         <div class="hero-actions">
           <a href="#music" class="btn-primary">Listen Now</a>
-          <a href="#videos" class="btn-secondary">Watch Videos</a>
+          <a href="/videos.html" class="btn-secondary">Watch Videos</a>
         </div>
       </div>
       <div class="hero-media">
@@ -50,10 +52,17 @@
     <section id="music" class="audio-section">
       <div class="audio-container">
         <h2 class="section-title">FEATURED STREAM</h2>
-        <audio controls class="audio-player">
-          <source src="assets/audio/feature-track.mp3" type="audio/mpeg" />
+        <p class="track-title">Bad Lil Chica</p>
+
+        <audio controls preload="metadata" class="audio-player">
+          <source src="assets/audio/Bad_Lil_Chica.mp3" type="audio/mpeg" />
+          <source src="assets/audio/Bad_Lil_Chica.wav" type="audio/wav" />
           Your browser does not support the audio element.
         </audio>
+
+        <p class="audio-description">
+          Preview the latest track "Bad Lil Chica" by Mondo.
+        </p>
       </div>
     </section>
 
