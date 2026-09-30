@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. DESIGN TOKENS & RESET (Shared Across All Devices)
+   1. DESIGN TOKENS & RESET
    ========================================================================== */
 
 :root {
@@ -12,12 +12,15 @@
   --color-charcoal: #2b2d42;
   --color-ivory: #fff9f2;
 
+  /* Typography */
   --font-heading: "Impact", "Arial Black", sans-serif;
   --font-body:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,18 +33,28 @@ body {
   line-height: 1.6;
 }
 
-/* Reusable UI Components */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   2. REUSABLE UI COMPONENTS
+   ========================================================================== */
+
 .btn-primary {
   display: inline-block;
   background-color: var(--color-terracotta);
   color: var(--color-ivory);
   padding: 0.85rem 1.75rem;
+  border: none;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: center;
+  cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
@@ -51,6 +64,7 @@ body {
 
 .btn-secondary {
   display: inline-block;
+  background-color: transparent;
   border: 2px solid var(--color-ochre);
   color: var(--color-ochre);
   padding: 0.75rem 1.5rem;
@@ -58,8 +72,12 @@ body {
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-align: center;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .btn-secondary:hover {
@@ -67,11 +85,36 @@ body {
   color: var(--color-charcoal);
 }
 
+.section-tag {
+  color: var(--color-ochre);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-rust);
+  margin-bottom: 1rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-subtitle {
+  color: #d1d5db;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
 /* ==========================================================================
-   2. MOBILE VIEW (Default Base Layout)
+   3. NAVIGATION & HEADER (Mobile Base)
    ========================================================================== */
 
-/* Header & Nav (Stacked/Compact) */
 .site-header {
   padding: 1rem 1.25rem;
   display: flex;
@@ -89,6 +132,15 @@ body {
   font-size: 1.75rem;
   color: var(--color-ochre);
   letter-spacing: 0.1em;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.site-logo:hover,
+.site-logo:focus-visible {
+  opacity: 0.9;
+  outline: none;
 }
 
 .nav-links {
@@ -101,12 +153,21 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-/* Hero Section (Stacked Vertically) */
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--color-ochre);
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+
 .hero-section {
   display: flex;
-  flex-direction: column-reverse; /* Shows headline and CTA above or below as preferred */
+  flex-direction: column-reverse;
   padding: 2.5rem 1.25rem;
   gap: 2rem;
   max-width: 1200px;
@@ -127,10 +188,10 @@ body {
 }
 
 .hero-title {
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 8vw, 2.75rem);
   line-height: 1.1;
   margin: 0.5rem 0 1rem;
-  font-family: var(--font-heading);
   color: var(--color-ivory);
 }
 
@@ -160,7 +221,10 @@ body {
   object-fit: cover;
 }
 
-/* Audio Section */
+/* ==========================================================================
+   5. AUDIO SECTION
+   ========================================================================== */
+
 .audio-section {
   background-color: #222436;
   padding: 3rem 1.25rem;
@@ -172,19 +236,6 @@ body {
   text-align: center;
 }
 
-.section-title {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  color: var(--color-rust);
-  margin-bottom: 1rem;
-}
-
-.audio-player {
-  width: 100%;
-  border-radius: 4px;
-  accent-color: var(--color-terracotta);
-}
-
 .track-title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
@@ -194,9 +245,16 @@ body {
   text-transform: uppercase;
 }
 
+.audio-player {
+  width: 100%;
+  border-radius: 4px;
+  accent-color: var(--color-terracotta);
+}
+
 /* ==========================================================================
-   Videos Section
+   6. VIDEOS SECTION
    ========================================================================== */
+
 .videos-section {
   padding: 4rem 1.25rem;
   background-color: #242638;
@@ -205,25 +263,6 @@ body {
 .videos-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.section-tag {
-  color: var(--color-ochre);
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  font-size: 0.85rem;
-}
-
-.section-subtitle {
-  color: #d1d5db;
-  font-size: 1.05rem;
-  margin-top: 0.5rem;
 }
 
 /* 16:9 Aspect Ratio Container */
@@ -239,7 +278,7 @@ body {
 .video-responsive {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 56.25%;
   height: 0;
 }
 
@@ -276,19 +315,29 @@ body {
 }
 
 .video-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
   background-color: var(--color-charcoal);
   border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
+  border: 1px solid rgba(255, 249, 242, 0.05);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  border: 1px solid rgba(255, 249, 242, 0.05);
 }
 
 .video-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.video-card:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
 }
 
 .card-thumb {
@@ -339,7 +388,7 @@ body {
   font-weight: 600;
 }
 
-/* Channel Subscribe Callout */
+/* Channel Callout Banner */
 .channel-banner {
   background: linear-gradient(
     135deg,
@@ -368,52 +417,12 @@ body {
   margin-top: 0.25rem;
 }
 
-.video-card {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font: inherit;
-  color: inherit;
-  background-color: var(--color-charcoal);
-  border-radius: 6px;
-  overflow: hidden;
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  border: 1px solid rgba(255, 249, 242, 0.05);
-}
-
-.video-card:focus-visible {
-  outline: 2px solid var(--color-ochre);
-  outline-offset: 2px;
-}
-
-/* Tablet & Desktop Adjustments */
-@media (min-width: 768px) {
-  .featured-video-meta {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .channel-banner {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-}
-
 /* ==========================================================================
-   3. DESKTOP VIEW (Screen Widths >= 768px)
+   7. DESKTOP ADAPTATIONS (min-width: 768px)
    ========================================================================== */
 
 @media (min-width: 768px) {
-  /* Header: Horizontal Row */
+  /* Navigation */
   .site-header {
     flex-direction: row;
     justify-content: space-between;
@@ -424,7 +433,7 @@ body {
     gap: 2rem;
   }
 
-  /* Hero: Side-by-Side 2-Column Split */
+  /* Hero Section */
   .hero-section {
     flex-direction: row;
     min-height: 80vh;
@@ -470,5 +479,22 @@ body {
   .section-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+  }
+
+  /* Videos Section */
+  .featured-video-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .channel-banner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 }
