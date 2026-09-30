@@ -3,140 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mondo | Official Website</title>
+    <title>Videos & Visuals | Mondo Official</title>
     <meta
       name="description"
-      content="Official website for Mondo. Stream latest tracks, watch videos, and view the press kit."
+      content="Watch official music videos, live performances, and studio freestyles from Mondo."
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/script.js"></script>
   </head>
   <body>
-    <!-- Videos Section -->
-    <section id="videos" class="videos-section">
-      <div class="videos-container">
-        <div class="section-header">
-          <span class="section-tag">Visuals & Media</span>
-          <h2 class="section-title">OFFICIAL VIDEOS</h2>
-          <p class="section-subtitle">
-            Stream official music videos, live sets, and visualizers.
-          </p>
-        </div>
+    <!-- Navigation -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo">MONDO</a>
+      <nav class="nav-links">
+        <a href="music.html">Music</a>
+        <a href="videos.html" class="active">Videos</a>
+        <a href="bio.html">Bio</a>
+        <a href="booking.html">Booking</a>
+      </nav>
+    </header>
 
-        <!-- Featured Cinema Player (16:9 Responsive) -->
-        <div class="featured-video-wrapper">
-          <div class="video-responsive">
-            <iframe
-              id="main-video-frame"
-              src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-              title="Mondo Featured Music Video"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              allowfullscreen
-            >
-            </iframe>
+    <!-- Main Content -->
+    <main>
+      <!-- Videos Section -->
+      <section id="videos" class="videos-section">
+        <div class="videos-container">
+          <div class="section-header">
+            <span class="section-tag">Visuals & Media</span>
+            <h1 class="section-title">OFFICIAL VIDEOS</h1>
+            <p class="section-subtitle">
+              Stream official music videos, live sets, and visualizers.
+            </p>
           </div>
-          <div class="featured-video-meta">
-            <h3 id="main-video-title">Bad Lil Chica (Official Music Video)</h3>
+
+          <!-- Featured Cinema Player (16:9 Responsive) -->
+          <div class="featured-video-wrapper">
+            <div class="video-responsive">
+              <iframe
+                id="main-video-frame"
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+                title="Mondo Featured Music Video"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div class="featured-video-meta">
+              <h2 id="main-video-title">
+                Bad Lil Chica (Official Music Video)
+              </h2>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener"
+                class="btn-primary"
+                >Watch on YouTube</a
+              >
+            </div>
+          </div>
+
+          <!-- Video Thumbnail Grid -->
+          <div class="video-grid">
+            <!-- Card 1 -->
+            <button
+              type="button"
+              class="video-card"
+              onclick="
+                swapVideo('dQw4w9WgXcQ', 'Bad Lil Chica (Official Music Video)')
+              "
+            >
+              <div class="card-thumb">
+                <img
+                  src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+                  alt="Bad Lil Chica"
+                  loading="lazy"
+                />
+                <span class="play-badge">▶</span>
+              </div>
+              <div class="card-info">
+                <h3>Bad Lil Chica</h3>
+                <span class="video-category">Music Video</span>
+              </div>
+            </button>
+
+            <!-- Card 2 -->
+            <button
+              type="button"
+              class="video-card"
+              onclick="swapVideo('L_LUpnjgPso', 'Mondo - Live from Atlanta')"
+            >
+              <div class="card-thumb">
+                <img
+                  src="https://img.youtube.com/vi/L_LUpnjgPso/hqdefault.jpg"
+                  alt="Live in Atlanta"
+                  loading="lazy"
+                />
+                <span class="play-badge">▶</span>
+              </div>
+              <div class="card-info">
+                <h3>Live in Atlanta</h3>
+                <span class="video-category">Live Performance</span>
+              </div>
+            </button>
+
+            <!-- Card 3 -->
+            <button
+              type="button"
+              class="video-card"
+              onclick="swapVideo('kJQP7kiw5Fk', 'Studio Sessions & Freestyle')"
+            >
+              <div class="card-thumb">
+                <img
+                  src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
+                  alt="Studio Freestyle"
+                  loading="lazy"
+                />
+                <span class="play-badge">▶</span>
+              </div>
+              <div class="card-info">
+                <h3>Studio Freestyle</h3>
+                <span class="video-category">Behind The Scenes</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Direct Channel Subscribe Banner -->
+          <div class="channel-banner">
+            <div>
+              <h3>Subscribe to Mondo on YouTube</h3>
+              <p>
+                Never miss official video drops, freestyles, and tour footage.
+              </p>
+            </div>
             <a
               href="https://www.youtube.com"
               target="_blank"
               rel="noopener"
-              class="btn-primary"
-              >Watch on YouTube</a
+              class="btn-secondary"
+              >Subscribe</a
             >
           </div>
         </div>
+      </section>
+    </main>
 
-        <!-- Video Thumbnail Grid -->
-        <div class="video-grid">
-          <!-- Card 1 -->
-          <button
-            type="button"
-            class="video-card"
-            onclick="
-              swapVideo('dQw4w9WgXcQ', 'Bad Lil Chica (Official Music Video)')
-            "
-          >
-            <div class="card-thumb">
-              <img
-                src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
-                alt="Bad Lil Chica"
-                loading="lazy"
-              />
-              <span class="play-badge">▶</span>
-            </div>
-            <div class="card-info">
-              <h4>Bad Lil Chica</h4>
-              <span class="video-category">Music Video</span>
-            </div>
-          </button>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Mondo. All rights reserved.</p>
+    </footer>
 
-          <!-- Card 2 -->
-          <button
-            type="button"
-            class="video-card"
-            onclick="swapVideo('L_LUpnjgPso', 'Mondo - Live from Atlanta')"
-          >
-            <div class="card-thumb">
-              <img
-                src="https://img.youtube.com/vi/L_LUpnjgPso/hqdefault.jpg"
-                alt="Live in Atlanta"
-                loading="lazy"
-              />
-              <span class="play-badge">▶</span>
-            </div>
-            <div class="card-info">
-              <h4>Live in Atlanta</h4>
-              <span class="video-category">Live Performance</span>
-            </div>
-          </button>
-
-          <!-- Card 3 -->
-          <button
-            type="button"
-            class="video-card"
-            onclick="swapVideo('kJQP7kiw5Fk', 'Studio Sessions & Freestyle')"
-          >
-            <div class="card-thumb">
-              <img
-                src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
-                alt="Studio Freestyle"
-                loading="lazy"
-              />
-              <span class="play-badge">▶</span>
-            </div>
-            <div class="card-info">
-              <h4>Studio Freestyle</h4>
-              <span class="video-category">Behind The Scenes</span>
-            </div>
-          </button>
-        </div>
-
-        <!-- Direct Channel Subscribe Banner -->
-        <div class="channel-banner">
-          <div>
-            <h3>Subscribe to Mondo on YouTube</h3>
-            <p>
-              Never miss official video drops, freestyles, and tour footage.
-            </p>
-          </div>
-          <a
-            href="https://www.youtube.com"
-            target="_blank"
-            rel="noopener"
-            class="btn-secondary"
-            >Subscribe</a
-          >
-        </div>
-      </div>
-    </section>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

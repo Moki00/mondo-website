@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking & Press Inquiries | Mondo Official</title>
+    <meta
+      name="description"
+      content="Book Mondo for live concerts, festival appearances, club sets, studio features, and press interviews."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo">MONDO</a>
+      <nav class="nav-links">
+        <a href="index.html#music">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="bio.html">Bio</a>
+        <a href="booking.html" class="active">Booking</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="booking-page">
+      <section class="booking-hero">
+        <span class="section-tag">Direct Inquiries</span>
+        <h1 class="hero-title">BOOK MONDO</h1>
+        <p class="hero-desc">
+          For festival bookings, venue performances, club walk-throughs, studio
+          features, and official press interviews, submit details using the
+          secure form below.
+        </p>
+      </section>
+
+      <div class="booking-grid">
+        <!-- Direct Management Contact Card -->
+        <aside class="booking-sidebar">
+          <div class="contact-card">
+            <h3>Management & Press</h3>
+            <p>
+              Direct all official press releases, licensing requests, and
+              emergency tour inquiries here:
+            </p>
+            <ul class="contact-list">
+              <li>
+                <strong>Direct Management:</strong>
+                <a href="mailto:mgmt@mjmalonemusic.com"
+                  >mgmt@mjmalonemusic.com</a
+                >
+              </li>
+              <li>
+                <strong>Touring & Booking:</strong>
+                <a href="mailto:booking@mjmalonemusic.com"
+                  >booking@mjmalonemusic.com</a
+                >
+              </li>
+              <li>
+                <strong>Base Location:</strong>
+                <span>Atlanta, Georgia</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="booking-note-card">
+            <h4>Performance Requirements</h4>
+            <p>
+              Please allow 24 to 48 hours for our team to review your event
+              scope, rider accommodations, and date availability.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Booking Form Container -->
+        <section class="form-wrapper">
+          <form class="booking-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="contact-name">Full Name / Promoter Name</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                required
+                placeholder="Enter full name"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  placeholder="name@company.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  placeholder="(404) 555-0199"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inquiry-type">Inquiry Type</label>
+                <select id="inquiry-type" name="type" required>
+                  <option value="" disabled selected>
+                    Select event category
+                  </option>
+                  <option value="concert">Live Concert / Festival</option>
+                  <option value="club">Club / Nightlife Appearance</option>
+                  <option value="feature">
+                    Studio Feature / Collaboration
+                  </option>
+                  <option value="press">Press / Podcast / Interview</option>
+                  <option value="licensing">Sync / Commercial Licensing</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="event-date">Target Date</label>
+                <input type="date" id="event-date" name="date" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="event-location">Venue & City</label>
+              <input
+                type="text"
+                id="event-location"
+                name="location"
+                placeholder="e.g. The Masquerade, Atlanta GA"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="event-budget">Proposed Budget / Offer ($USD)</label>
+              <input
+                type="text"
+                id="event-budget"
+                name="budget"
+                placeholder="e.g. $2,500"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="event-details">Event Details & Additional Info</label>
+              <textarea
+                id="event-details"
+                name="details"
+                rows="5"
+                required
+                placeholder="Provide set time expectations, venue capacity, and any co-headliners..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit-btn">
+              Submit Booking Request
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Mondo. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

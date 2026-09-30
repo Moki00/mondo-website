@@ -418,6 +418,414 @@ img {
 }
 
 /* ==========================================================================
+   Booking Page Styles
+   ========================================================================== */
+
+.booking-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+.booking-hero {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.booking-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Sidebar Info Cards */
+.booking-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card,
+.booking-note-card {
+  background-color: #222436;
+  border-radius: 8px;
+  padding: 1.75rem;
+  border: 1px solid rgba(255, 249, 242, 0.08);
+}
+
+.contact-card h3,
+.booking-note-card h4 {
+  font-family: var(--font-heading);
+  color: var(--color-ochre);
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.contact-card p,
+.booking-note-card p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+.contact-list strong {
+  color: var(--color-ivory);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-list a {
+  color: var(--color-terracotta);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-list a:hover {
+  color: var(--color-ochre);
+}
+
+/* Form Styles */
+.form-wrapper {
+  background-color: #222436;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 249, 242, 0.08);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-ochre);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background-color: var(--color-charcoal);
+  border: 1px solid rgba(255, 249, 242, 0.15);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  color: var(--color-ivory);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 3px rgba(217, 107, 67, 0.25);
+}
+
+.form-submit-btn {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255, 249, 242, 0.08);
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 768px) {
+  .booking-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .booking-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .form-wrapper {
+    flex: 2;
+    padding: 2.5rem;
+  }
+
+  .form-row {
+    flex-direction: row;
+  }
+
+  .form-row .form-group {
+    flex: 1;
+  }
+
+  .form-submit-btn {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+/* ==========================================================================
+   Music Page Styles
+   ========================================================================== */
+
+.music-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+.music-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Spotlight Single Banner */
+.spotlight-track {
+  margin-bottom: 4rem;
+}
+
+.spotlight-card {
+  background: linear-gradient(135deg, rgba(184, 90, 36, 0.15) 0%, #222436 100%);
+  border: 1px solid var(--color-terracotta);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-badge {
+  display: inline-block;
+  background-color: var(--color-terracotta);
+  color: var(--color-ivory);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
+}
+
+.spotlight-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-ivory);
+  letter-spacing: 0.05em;
+}
+
+.spotlight-subtitle {
+  color: var(--color-ochre);
+  font-size: 0.95rem;
+  margin: 0.25rem 0 1.5rem;
+}
+
+.stream-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.stream-links .btn-primary,
+.stream-links .btn-secondary {
+  font-size: 0.85rem;
+  padding: 0.65rem 1.25rem;
+}
+
+/* Discography Grid */
+.release-grid-section .section-title {
+  margin-bottom: 2rem;
+}
+
+.release-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.release-card {
+  background-color: #222436;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 249, 242, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.release-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-charcoal);
+  overflow: hidden;
+}
+
+.release-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.release-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c1d2b;
+}
+
+.placeholder-art {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-sage);
+  letter-spacing: 0.1em;
+}
+
+.release-year {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(43, 45, 66, 0.9);
+  color: var(--color-ivory);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.release-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.release-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-ivory);
+  margin-bottom: 0.5rem;
+}
+
+.release-desc {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.release-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.release-btn {
+  text-align: center;
+}
+
+/* Accordion / Details */
+.lyrics-dropdown summary {
+  cursor: pointer;
+  color: var(--color-ochre);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0;
+  outline: none;
+}
+
+.lyrics-body {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--color-charcoal);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.lyrics-snippet {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #d1d5db;
+}
+
+/* Desktop Grid */
+@media (min-width: 768px) {
+  .release-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .spotlight-card {
+    padding: 2.5rem;
+  }
+
+  .spotlight-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .spotlight-meta {
+    flex: 1;
+  }
+
+  .stream-links {
+    margin-top: 0;
+    flex-direction: column;
+    min-width: 160px;
+  }
+}
+
+/* ==========================================================================
    7. DESKTOP ADAPTATIONS (min-width: 768px)
    ========================================================================== */
 
